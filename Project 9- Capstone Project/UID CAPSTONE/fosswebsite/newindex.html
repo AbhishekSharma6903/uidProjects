@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+    // Slideshow
+    var slideIndex = 1;
+    showDivs(slideIndex);
+    
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+    
+    function currentDiv(n) {
+      showDivs(slideIndex = n);
+    }
+    
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demodots");
+      if (n > x.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = x.length} ;
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" w3-white", "");
+      }
+      x[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " w3-white";
+    }
+    </script>
+    <script src="sign1.js"></script>
 <title>Cyber Security Camp</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -207,6 +237,7 @@ button{
   margin: 0%;
 }
 </style>
+<link rel="stylesheet" href="sign1.css">
 </head>
 <body>
 
@@ -252,7 +283,7 @@ button{
       </div>
     </div> 
     <a href="https://thehackernews.com/2022/10/indian-energy-company-tata-powers-it.html">Cyber News</a>
-    <a href="login.html">Sign in/Login</a>
+    <a href="sign1.html">Sign in/Login</a>
     <a href="contact.html">Contact Us</a>
   
   </div>
@@ -480,35 +511,7 @@ button{
 </footer>
 
 
-<script>
-// Slideshow
-var slideIndex = 1;
-showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demodots");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" w3-white", "");
-  }
-  x[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " w3-white";
-}
-</script>
-
+<script src="sign1.js"></script>
 </body>
 </html>
